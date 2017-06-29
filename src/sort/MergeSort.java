@@ -14,7 +14,7 @@ public class MergeSort {
      * @param mid 中间下标
      * @param end 结束下标
      */
-    public void merge(int[] a, int[] b, int start, int mid, int end) {
+    public static void merge(int[] a, int[] b, int start, int mid, int end) {
         int i = start;//第一段序列的起始下标
         int j = mid + 1;//第二段序列的起始下标
         int k = start;//存放合并序列的起始下标
@@ -43,7 +43,7 @@ public class MergeSort {
      * @param b 辅助合并序列
      * @param s 字表长度
      */
-    public void mergePass(int[] a,int[] b,int s){
+    public static void mergePass(int[] a,int[] b,int s){
         int i;
         //合并大小为s的相邻子数组
         for (i = 0; i+2*s <= a.length; i+=2*s) {
@@ -61,7 +61,7 @@ public class MergeSort {
         ArrayUtils.printarray(b);
     }
 
-    public void mergeSort(int[] a){
+    public static void mergeSort(int[] a){
         int[] b=new int[a.length];
         int s=1;//s从1开始
         //s等于数组长度时完成排序
@@ -77,7 +77,6 @@ public class MergeSort {
 
     public static void main(String[] args) {
         int[] a={9,1,5,3,4,2,6,8,7,0};
-        MergeSort sort=new MergeSort();
-        sort.mergeSort(a);
+        mergeSort(a);
     }
 }
